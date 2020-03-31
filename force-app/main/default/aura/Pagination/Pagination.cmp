@@ -1,0 +1,64 @@
+<aura:component controller="LightningPaginationApexController" >
+    
+    <aura:attribute name="recordsperPage" type="integer" default="10"/>
+    <aura:attribute name="start" type="integer" default="1"/>
+    <aura:attribute name="end" type="integer" default="10"/>
+    <aura:attribute name="searchString" type="string" default=""/>
+    <aura:attribute name="lstAccounts" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <div class="slds">
+        <div class="slds-align_absolute-center">
+            <ui:outputText value="SearchString"/>
+            <ui:inputText value="{!v.searchString}"/>
+            <button class="slds-button slds-button_brand" onclick="{!c.doInit}">Search</button>
+        </div>
+        
+        <div>
+        	<button class="slds-button slds-button_brand" onclick="{!c.previous}" >Prev</button>
+            <button class="slds-button slds-button_brand" onclick="{!c.next}">Next</button>
+        </div>
+    	<table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Id">S.No</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Id">Account Id</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Industry">Account Name</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.lstAccounts}" var="acc" indexVar="index" start="{!v.start}" end="{!v.end}" >
+                    <tr>
+                        <td data-label="Account Id">
+                            <div class="slds-truncate" title="Cloudhub">{!index}</div>
+                        </td>
+                        <td data-label="Account Id">
+                            <div class="slds-truncate" title="Cloudhub">{!acc.Id}</div>
+                        </td>
+                        <td data-label="Account Name">
+                            <div class="slds-truncate" title="Cloudhub">{!acc.Name}</div>
+                        </td>
+                        <td data-label="Account Industry">
+                            <div class="slds-truncate" title="Cloudhub">{!acc.Industry}</div>
+                        </td>
+                    
+                    </tr>
+                
+                </aura:iteration>
+            
+            </tbody>
+            
+        </table>
+    </div>
+	
+</aura:component>

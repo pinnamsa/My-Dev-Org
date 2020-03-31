@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <div class="slds-p-around--medium">
+        <h2 class="slds-text-heading--medium" >Test Heading</h2>
+    </div>
+    <div class="slds-p-around--medium">
+        Test content of module
+    </div>
+    <div class="slds-p-around--medium">
+        <ui:button label="Cancel" 
+                   class="slds-button slds-button- -neutral cuf-publisherCancelButton uiButton"
+                   press="{!c.cancelBtn}"/>
+        <ui:button label="Save &amp; Close" 
+                   class="slds-button slds-button--brand cuf-publisherShareButton uiButton"
+                   press="{!c.saveAndCloseBtn}"/>
+    </div>
+</aura:component>

@@ -1,0 +1,226 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    
+    
+    
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+        <div class="slds-modal__container " style="width: 65%; min-width: 65rem; left: -210px;">
+            <header class="slds-modal__header">
+                <div class="slds-page-header" role="banner">
+                    <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="this should match">
+                        Quick Email Send.
+                    </h1>
+                </div>
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">X
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium border" id="modal-content-id-1">
+                
+                
+                <div class="slds-m-around--medium">
+                    <div class="slds-container--medium" style="max-width: 60rem">
+                        
+                        
+                        <div class="slds-grid slds-wrap ">
+                            <div class="slds-col slds-size_1-of-12 ">
+                                <lightning:buttonIcon class="btncls" iconName="utility:send"  alternativeText="Send Mail" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-12 ">
+                                <div class="slds-col toBtnCls">
+                                    <lightning:button label="To" title="To Address" class="btnWidth"/>
+                                </div>
+                                <div class="slds-col ccBtnCls">
+                                    <lightning:button label="CC" class="btnWidth" />
+                                </div>
+                                <div class="slds-col subBtnCls">
+                                    <lightning:button label="Subject" class="btnWidth"/>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_10-of-12 ">
+                                <div class="slds-col" style="padding-bottom: 10px;">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <ui:inputEmail class="slds-input" aura:id="email"  value="{!v.email}" required="true" placeholder="abc@email.com"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col " style="padding-bottom: 10px;">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <ui:inputEmail class="slds-input" aura:id="email"  value="{!v.email}" required="true" placeholder="abc@email.com"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col " style="padding-bottom: 10px;">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <ui:inputEmail class="slds-input" aura:id="email"  value="{!v.email}" required="true" placeholder="abc@email.com"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div> <br/>
+                        
+                        <div>
+                            <img src="{!$Resource.LFGLogo}" style="height: 250px; margin-top: -60px; margin-bottom: -30px;"/>
+                            <br/>
+                            <label style="font-size: 35px; font-weight: bold; color: #8B0000;"> Lincoln Financial Group</label><br/>
+                            <label style="font-size: 21px; font-weight: bold; color: #8B0000;">  Print and Ship Details </label><br/>
+                            <table class="lableCls">
+                                <tr>
+                                    <label>Today’s Date:</label>
+                                    Today’s Date:
+                                </tr>
+                                <tr>
+                                    <label>Group Name:</label>
+                                    Group Name:
+                                </tr>
+                                <tr>
+                                    <label>Group ID:</label>
+                                    Group ID:
+                                </tr>
+                                <br/>
+                                <tr>
+                                    <label>Materials Requested for Print</label>
+                                </tr>
+                                <tr>
+                                    <label>Languages to Include:</label>
+                                    Languages to Include:
+                                </tr>
+                                <tr>
+                                    <label>Delivery Melabelod Requested:</label>
+                                    Delivery Melabelod Requested:
+                                </tr>
+                                <tr>
+                                    <label>Include Promo Items: </label>
+                                    Include Promo Items: 
+                                </tr>
+                                <tr>
+                                    <label>IDate Materials are Needed at location: </label>
+                                    location 
+                                </tr>
+                                
+                                <br/>
+                                <tr>
+                                    <label>Shipping Information - If multiple locations, labele multi-location spreadsheet is attached.</label>
+                                </tr>
+                                <tr>
+                                    <label>Attention:  </label>
+                                    Languages to Include:
+                                </tr>
+                                <tr>
+                                    <label>Email Address:</label>
+                                    Delivery Melabelod Requested:
+                                </tr>
+                                <tr>
+                                    <label>Company:  </label>
+                                    Include Promo Items: 
+                                </tr>
+                                <tr>
+                                    <label>Contact Phone: </label>
+                                    location 
+                                </tr>
+                                
+                                <tr>
+                                    <label>Street Address:</label>
+                                    Languages to Include:
+                                </tr>
+                                <tr>
+                                    <label>City:</label>
+                                    Delivery Melabelod Requested:
+                                </tr>
+                                <tr>
+                                    <label>State: </label>
+                                    Include Promo Items: 
+                                </tr>
+                                <tr>
+                                    <label>Zip Code : </label>
+                                    location 
+                                </tr>
+                                
+                                <tr>
+                                    <label>Additional Shipping Comments:</label>
+                                    Languages to Include:
+                                </tr>
+                                <tr>
+                                    <label>Cost Center for Delivery:</label>
+                                    Delivery Melabelod Requested:
+                                </tr>
+                                
+                                <br/>
+                                <tr>
+                                    <label style="font-size: 21px; font-weight: bold; color: #8B0000;">Promo Items</label>
+                                </tr>
+                                <tr>
+                                    <label>Pens:  </label>
+                                    Languages to Include:
+                                </tr>
+                                <tr>
+                                    <label>Rulers:</label>
+                                    Delivery Melabelod Requested:
+                                </tr>
+                                <tr>
+                                    <label>Luggage Tags:   </label>
+                                    Include Promo Items: 
+                                </tr>
+                                <tr>
+                                    <label>Lip Balm: </label>
+                                    location 
+                                </tr>
+                                
+                                <tr>
+                                    <label>Toolabelbrushes:</label>
+                                    Languages to Include:
+                                </tr>
+                                
+                            </table>                
+                            <br/> <br/>
+                            
+                            <table style=" border: 1px solid black; border-collapse: collapse; width: 70%;">
+                                <tr>
+                                    <th style=" height: 50px; border: 1px solid black;">Full PDF/File Name</th>
+                                    <th style=" height: 50px; border: 1px solid black;"># of  Copies</th>
+                                    <th style=" height: 50px; border: 1px solid black;">Staple Instructions (If needed)</th>
+                                    <th style=" height: 50px; border: 1px solid black;">Assembly Instructions (List in order by coverage)</th>
+                                </tr>
+                                <tr>
+                                    <td>Peter</td>
+                                    <td>Griffin</td>
+                                    <td>$100</td>
+                                    <td>$100</td>
+                                </tr>
+                                <tr>
+                                    <td>Lois</td>
+                                    <td>Griffin</td>
+                                    <td>$150</td>
+                                    <td>$100</td>
+                                </tr>
+                                <tr>
+                                    <td>Joe</td>
+                                    <td>Swanson</td>
+                                    <td>$300</td>
+                                    <td>$100</td>
+                                </tr>
+                                <tr>
+                                    <td>Cleveland</td>
+                                    <td>Brown</td>
+                                    <td>$250</td>
+                                    <td>$100</td>
+                                </tr>
+                            </table>
+                            
+                            <br/> <br/> 
+                            <label>Comments:</label><br/>
+                            <ui:inputTextArea aura:id="comments"  value="My comments" rows="5"/>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

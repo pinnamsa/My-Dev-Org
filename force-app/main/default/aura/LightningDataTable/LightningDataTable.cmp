@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="LightningDataTableHelper" >
+	
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="showModal" type="boolean" default="false"/>
+    <aura:attribute name="recId" type="string" default="false"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <div style="height: 300px">
+        <lightning:datatable
+                             keyField="id"
+                             data="{! v.data }"
+                             columns="{! v.columns }"
+                             onrowaction="{! c.handleRowAction }"
+                             hideCheckboxColumn="true"/>
+    </div>
+    
+    <aura:if isTrue="{!v.showModal}">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Modal Header</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    {!v.recordId}
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral">Cancel</button>
+                    <button class="slds-button slds-button_brand">Save</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        
+        
+    </aura:if>
+    
+    
+</aura:component>

@@ -1,0 +1,9 @@
+<apex:page controller="VFPage1Apex" action="{!getoption}" >
+    <apex:form >
+    	<apex:pageBlock mode="mainDetail" >
+			<apex:selectList value="{!selected}">
+            <apex:selectOptions value="{!options}" />
+            </apex:selectList>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,52 @@
+<aura:component implements="force:lightningQuickAction,flexipage:availableForRecordHome,force:hasRecordId" controller="CreateNewAccountController" >
+    <aura:attribute name="recordId" type="Id"/>
+     <aura:attribute name="accountId" type="Id"/>
+    <aura:attribute name="acc" type="Account" default="{'sobjectType':'Account'}"/>
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="PatentEvent" type="c:ChildParentEvent"/>
+	
+    <aura:method name="myMethod" action="{!c.executeMyMethod}"> 
+        <aura:attribute name="param1" type="booelan"/> 
+        <aura:attribute name="param2" type="String"/> 
+    </aura:method>
+
+    <aura:if isTrue="{!v.showPopup}">
+    <div class="demo-only" style="height: 640px;">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                        <lightning:icon iconName="remove"  />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Account Creation</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:recordEditForm aura:id="form"
+                                              recordId="{!v.recordId}"
+                                              objectApiName="Account"     
+                                              
+                                              class="slds-card__body_inner">
+                        
+                        <lightning:messages/>
+                        <lightning:inputField fieldName="Name" value="{!v.acc.Name}"/>
+                        <lightning:inputField fieldName="Phone" aura:id="accountLookup" value="{!v.acc.Phone}"/>
+                        <lightning:inputField fieldName="Industry" aura:id="industry" value="{!v.acc.Industry}" />
+                        
+                        <!--div class="slds-m-top_medium">
+                            <lightning:button variant="brand" label="Submit" type="submit" />
+                        </div-->
+                    </lightning:recordEditForm>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick="{!c.closePopup}">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick="{!c.saveAccount}">Save</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    </aura:if>
+</aura:component>

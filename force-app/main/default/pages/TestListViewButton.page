@@ -1,0 +1,3 @@
+<apex:page standardController="opportunity" recordSetVar="opportunities" >
+    vF Page
+</apex:page>

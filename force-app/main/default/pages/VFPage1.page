@@ -1,0 +1,36 @@
+<apex:page controller="VFPage1Apex">
+    first page
+    <apex:form >
+        <apex:sectionHeader title="Title" subtitle="SubTitle" description="Section Header"  />
+        <br/>
+        {!$User.FirstName}<br/>
+        {!name}<br/>
+        {!job}
+        
+        <apex:pageBlock title="PageBlockTitle" mode="MainDetail" >
+            <apex:pageBlockSection >
+                <apex:selectList value="{!selected}" size="1" >
+                    <apex:selectOption itemLabel="option1" itemValue="optin1" />
+                    <apex:selectOption itemLabel="option2" itemValue="optin2" itemEscaped="true" />
+                    <apex:selectOption itemLabel="option3" itemValue="optin3" />
+                </apex:selectList>
+                 selected:{!selected}<apex:commandButton value="button" action="{!redirecttoVf2}"   /><br/>
+            </apex:pageBlockSection>
+           
+           
+            two<br/>
+        </apex:pageBlock>
+        <apex:pageBlock title="PageBlockTitle" mode="Detail"  dir="LTR"  >
+            <apex:outputLabel value="{!name}" title="outputLabel" />
+            <apex:inputText value="{!job}" /><br/>
+            <apex:outputLabel value="InputSecret" title="outputLabel" />
+            <apex:inputSecret value="{!job}" /><br/>
+            <apex:outputLabel value="InputHidden" title="outputLabel" />
+            <apex:inputHidden value="{!job}" /><br/>
+            <apex:outputLabel value="{!job}" title="outputLabel" />
+            <apex:inputFile value="{!job}" /><br/>
+            three<br/>
+            four<br/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

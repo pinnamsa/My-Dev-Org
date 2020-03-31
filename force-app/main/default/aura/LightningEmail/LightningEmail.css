@@ -1,0 +1,37 @@
+.THIS .border{
+    border:solid 1px;
+}
+
+.THIS .btncls{
+    min-height: 114px;
+    min-width: 74px;
+    margin-top: 7px;
+    margin-bottom: 12px;
+}
+
+.THIS .toBtnCls{
+    padding-top: 2px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+}
+
+.THIS .ccBtnCls{
+    padding-left: 5px;
+    padding-bottom: 13px;
+
+}
+
+.THIS .subBtnCls{
+    padding-left: 5px;
+
+}
+
+.THIS .lableCls tr lable{
+    font-weight: bolder;
+    padding-right: 5px;
+
+}
+
+.THIS .btnWidth{
+    width: 68px;
+}
