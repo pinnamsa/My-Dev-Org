@@ -2,7 +2,6 @@
     <aura:attribute name="recordId" type="String"/>
     <aura:attribute name="parentId" type="String"/>
      <aura:attribute name="showChild" type="boolean" default="false" />
-     <aura:attribute name="TestAttribute" type="boolean" default="false" />
 
     <aura:handler name="PatentEvent" event="c:ChildParentEvent" action="{!c.handleEvent}"/> 
     <lightning:notificationsLibrary aura:id="notificationsLibrary"/>
